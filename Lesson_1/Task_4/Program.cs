@@ -1,3 +1,9 @@
+/*
+* Lesson 1 Task 4: get two strings and concatenate them if the first one is longer, split the second one with the first character of the first string if the second one is longer, otherwise do nothing
+* Author: Stanislav Mykhailenko
+* License: Unlicense
+*/
+
 Console.Write("Enter string 1: ");
 
 string? string1 = Console.ReadLine();

@@ -14,5 +14,5 @@ if (int.TryParse(Console.ReadLine(), out number))
 }
 else
 {
-    Console.WriteLine("Invalid data entereed.");
+    Console.WriteLine("Invalid data entered.");
 }
