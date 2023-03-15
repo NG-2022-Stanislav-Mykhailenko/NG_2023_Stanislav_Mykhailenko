@@ -12,4 +12,11 @@ Checked means the task is Done.
 
 - [x] Task 2
 - [ ] Task 3
+- [x] Task 4
+
+### Lesson 2
+
+- [ ] Task 1
+- [ ] Task 2
+- [ ] Task 3
 - [ ] Task 4
