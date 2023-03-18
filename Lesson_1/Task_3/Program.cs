@@ -6,7 +6,6 @@
 
 int duplicate;
 List<int> numbers = new List<int>();
-string? userInput;
 
 for (int i = 0; i < 10; i++)
 {
@@ -14,9 +13,8 @@ for (int i = 0; i < 10; i++)
 
 	do
 	{
-		Console.Write(string.Format("Enter number {0}: ", i + 1));
-		userInput = Console.ReadLine();
-	} while (!int.TryParse(userInput, out newNumber));
+		Console.Write($"Enter number {i + 1}: ");
+	} while (!int.TryParse(Console.ReadLine(), out newNumber));
 
 	numbers.Add(newNumber);
 }
@@ -24,8 +22,7 @@ for (int i = 0; i < 10; i++)
 do
 {
 	Console.Write("Enter a number to duplicate: ");
-	userInput = Console.ReadLine();
-} while (!int.TryParse(userInput, out duplicate));
+} while (!int.TryParse(Console.ReadLine(), out duplicate));
 
 for (int i = 0; i < numbers.Count; i++) {
 	if (numbers[i] == duplicate)
@@ -35,8 +32,4 @@ for (int i = 0; i < numbers.Count; i++) {
 	}
 }
 
-Console.WriteLine(
-	string.Join(", ",
-		numbers.Select(number => number.ToString())
-	)
-);
+Console.WriteLine(String.Join(", ", numbers));
