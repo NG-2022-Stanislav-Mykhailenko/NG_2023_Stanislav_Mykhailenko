@@ -9,27 +9,31 @@ List<int> numbers = new List<int>();
 
 for (int i = 0; i < 10; i++)
 {
-	int newNumber;
+    int newNumber;
 
-	do
-	{
-		Console.Write($"Enter number {i + 1}: ");
-	} while (!int.TryParse(Console.ReadLine(), out newNumber));
+    while (true)
+    {
+        Console.Write($"Enter number {i + 1}: ");
+        if (int.TryParse(Console.ReadLine(), out newNumber))
+            break;
+    }
 
-	numbers.Add(newNumber);
+    numbers.Add(newNumber);
 }
 
-do
+while (true)
 {
-	Console.Write("Enter a number to duplicate: ");
-} while (!int.TryParse(Console.ReadLine(), out duplicate));
+    Console.Write($"Enter number to duplicate: ");
+    if (int.TryParse(Console.ReadLine(), out duplicate))
+        break;
+}
 
 for (int i = 0; i < numbers.Count; i++) {
-	if (numbers[i] == duplicate)
-	{
-		numbers.Insert(i, duplicate);
-		i++;
-	}
+    if (numbers[i] == duplicate)
+    {
+        numbers.Insert(i, duplicate);
+        i++;
+    }
 }
 
 Console.WriteLine(String.Join(", ", numbers));
