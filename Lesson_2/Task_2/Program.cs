@@ -13,24 +13,21 @@ List<Person> people = new List<Person>()
     new Person("Alex",80)
 };
 
-string? userInput;
-
 int minimum;
 int maximum;
 
 do
 {
 	Console.Write("Enter minimum age: ");
-	userInput = Console.ReadLine();
-} while (!int.TryParse(userInput, out minimum) || minimum < 0 || minimum > 130);
+} while (!int.TryParse(Console.ReadLine(), out minimum) || minimum < 0 || minimum > 130);
 
 do
 {
 	Console.Write("Enter maximum age: ");
 	userInput = Console.ReadLine();
-} while (!int.TryParse(userInput, out maximum) || maximum < minimum || maximum > 130);
+} while (!int.TryParse(Console.ReadLine(), out maximum) || maximum < minimum || maximum > 130);
 
-var selected = from s in people where s.Age >= minimum && s.Age <= maximum select s;
+var selected = from person in people where person.Age >= minimum && person.Age <= maximum select person;
 
 foreach (Person person in selected)
 {
