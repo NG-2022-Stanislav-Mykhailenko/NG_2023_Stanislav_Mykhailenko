@@ -20,11 +20,13 @@ List<Car> cars = new List<Car>()
 
 string? number;
 
-do
+while (true)
 {
-	Console.Write("Enter number: ");
-	number = Console.ReadLine();
-} while (number == null);
+    Console.Write("Enter number: ");
+    number = Console.ReadLine();
+    if (number != null)
+        break;
+}
 
 var selected = owners.FirstOrDefault(owner => cars.Any(car => car.Number == number && car.OwnerId == owner.Id));
 
@@ -32,36 +34,31 @@ Console.WriteLine(selected);
 
 class Owner
 {
-	public int Id { get;}
-	public string Name { get;}
-	public string Address { get;}
+    public int Id { get;}
+    public string Name { get;}
+    public string Address { get;}
 
-	public override string ToString()
-	{
-		return "Name: " + Name + ", Address: " + Address;
-	}
+    public override string ToString()
+    {
+        return "Name: " + Name + ", Address: " + Address;
+    }
 
-	public Owner(int id, string name, string address)
-	{
-		Id = id;
-		Name = name;
-		Address = address;
-	}
+    public Owner(int id, string name, string address)
+    {
+        Id = id;
+        Name = name;
+        Address = address;
+    }
 }
 
 class Car
 {
-	public string Number { get;}
-	public int OwnerId { get;}
+    public string Number { get;}
+    public int OwnerId { get;}
 
-	public override string ToString()
-	{
-		return "Number: " + Number + ", Owner ID: " + OwnerId;
-	}
-
-	public Car(string number, int ownerId)
-	{
-		Number = number;
-		OwnerId = ownerId;
-	}
+    public Car(string number, int ownerId)
+    {
+        Number = number;
+        OwnerId = ownerId;
+    }
 }
