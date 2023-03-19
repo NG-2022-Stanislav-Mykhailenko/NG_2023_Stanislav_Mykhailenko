@@ -16,37 +16,40 @@ List<Person> people = new List<Person>()
 int minimum;
 int maximum;
 
-do
+while (true)
 {
-	Console.Write("Enter minimum age: ");
-} while (!int.TryParse(Console.ReadLine(), out minimum) || minimum < 0 || minimum > 130);
+    Console.Write($"Enter minimum age: ");
+    if (int.TryParse(Console.ReadLine(), out minimum) || minimum >= 0 || minimum <= 130)
+        break;
+}
 
-do
+while (true)
 {
-	Console.Write("Enter maximum age: ");
-	userInput = Console.ReadLine();
-} while (!int.TryParse(Console.ReadLine(), out maximum) || maximum < minimum || maximum > 130);
+    Console.Write($"Enter maximum age: ");
+    if (int.TryParse(Console.ReadLine(), out maximum) || maximum >= minimum || maximum <= 130)
+        break;
+}
 
 var selected = from person in people where person.Age >= minimum && person.Age <= maximum select person;
 
 foreach (Person person in selected)
 {
-	Console.WriteLine(person);
+    Console.WriteLine(person);
 }
 
 class Person
 {
-	public string Name { get;}
-	public int Age { get;}
+    public string Name { get;}
+    public int Age { get;}
 
-	public override string ToString()
-	{
-		return "Name: " + Name + ", Age: " + Age;
-	}
+    public override string ToString()
+    {
+        return "Name: " + Name + ", Age: " + Age;
+    }
 
-	public Person(string name, int age)
-	{
-		Name = name;
-		Age = age;
-	}
+    public Person(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
 }
