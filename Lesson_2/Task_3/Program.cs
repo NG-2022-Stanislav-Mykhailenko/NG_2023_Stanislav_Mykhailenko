@@ -26,14 +26,14 @@ do
 	name = Console.ReadLine();
 } while (name == null);
 
-var selected = from s in customers where s.Name == name select s;
+var selected = from customer in customers where customer.Name == name select customer;
 
 foreach (Customer customer in selected)
 {
 	Console.WriteLine(customer);
 }
 
-var number = selected.Where(s => s.Age >= 18).Count();
+var number = selected.Where(customer => customer.Age >= 18).Count();
 
 Console.WriteLine("Amount of customers older than 18: " + number);
 
