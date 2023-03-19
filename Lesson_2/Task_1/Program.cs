@@ -10,39 +10,33 @@ for (int i = 0; i < 10; i++)
 {
 	string? name;
 	float price;
-	string? userInput;
 
 	do
 	{
-		Console.Write(string.Format("Enter product {0} name: ", i + 1));
+		Console.Write($"Enter product {i + 1} name: ");
 		name = Console.ReadLine();
 	} while (name == null);
 
 	do
 	{
-		Console.Write(string.Format("Enter product {0} price: ", i + 1));
-		userInput = Console.ReadLine();
-	} while (!float.TryParse(userInput, out price));
+		Console.Write($"Enter product {i + 1} price: ");
+	} while (!float.TryParse(Console.ReadLine(), out price));
 
 	products.Add(new Product(name, price));
 }
 
-products.Sort((x,y) => x.Price.CompareTo(y.Price));
-
-Console.WriteLine("Sorted ascending: ");
-
-foreach (Product product in products)
+for (int i = 0; i < 2; i++)
 {
-	Console.WriteLine(product);
-}
+	bool descending = Convert.ToBoolean(i);
 
-products.Sort((x,y) => y.Price.CompareTo(x.Price));
+	products.Sort((first,second) => (descending ? second.Price.CompareTo(first.Price) : first.Price.CompareTo(second.Price)));
 
-Console.WriteLine("Sorted descending: ");
+	Console.WriteLine($"Sorted {(descending ? "descending" : "ascending")}:");
 
-foreach (Product product in products)
-{
-	Console.WriteLine(product);
+	foreach (Product product in products)
+	{
+		Console.WriteLine(product);
+	}
 }
 
 class Product
@@ -61,3 +55,4 @@ class Product
 		Price = price;
 	}
 }
+
