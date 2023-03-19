@@ -26,13 +26,13 @@ do
 	number = Console.ReadLine();
 } while (number == null);
 
-var selected = owners.FirstOrDefault(x => cars.Any(y => y.Number == number && y.OwnerID == x.ID));
+var selected = owners.FirstOrDefault(owner => cars.Any(car => car.Number == number && car.OwnerId == owner.Id));
 
 Console.WriteLine(selected);
 
 class Owner
 {
-	public int ID { get;}
+	public int Id { get;}
 	public string Name { get;}
 	public string Address { get;}
 
@@ -43,7 +43,7 @@ class Owner
 
 	public Owner(int id, string name, string address)
 	{
-		ID = id;
+		Id = id;
 		Name = name;
 		Address = address;
 	}
@@ -52,16 +52,16 @@ class Owner
 class Car
 {
 	public string Number { get;}
-	public int OwnerID { get;}
+	public int OwnerId { get;}
 
 	public override string ToString()
 	{
-		return "Number: " + Number + ", Owner ID: " + OwnerID;
+		return "Number: " + Number + ", Owner ID: " + OwnerId;
 	}
 
-	public Car(string number, int ownerid)
+	public Car(string number, int ownerId)
 	{
 		Number = number;
-		OwnerID = ownerid;
+		OwnerId = ownerId;
 	}
 }
