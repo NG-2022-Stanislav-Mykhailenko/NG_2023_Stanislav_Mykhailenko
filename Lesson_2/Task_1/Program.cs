@@ -8,51 +8,55 @@ List<Product> products = new List<Product>();
 
 for (int i = 0; i < 10; i++)
 {
-	string? name;
-	float price;
+    string? name;
+    float price;
 
-	do
-	{
-		Console.Write($"Enter product {i + 1} name: ");
-		name = Console.ReadLine();
-	} while (name == null);
+    while (true)
+    {
+        Console.Write($"Enter product {i + 1} name: ");
+        name = Console.ReadLine();
+        if (name != null)
+            break;
+    }
 
-	do
-	{
-		Console.Write($"Enter product {i + 1} price: ");
-	} while (!float.TryParse(Console.ReadLine(), out price));
+    while (true)
+    {
+        Console.Write($"Enter product {i + 1} price: ");
+        if (float.TryParse(Console.ReadLine(), out price))
+            break;
+    }
 
-	products.Add(new Product(name, price));
+    products.Add(new Product(name, price));
 }
 
 for (int i = 0; i < 2; i++)
 {
-	bool descending = Convert.ToBoolean(i);
+    bool descending = Convert.ToBoolean(i);
 
-	products.Sort((first,second) => (descending ? second.Price.CompareTo(first.Price) : first.Price.CompareTo(second.Price)));
+    products.Sort((first,second) => (descending ? second.Price.CompareTo(first.Price) : first.Price.CompareTo(second.Price)));
 
-	Console.WriteLine($"Sorted {(descending ? "descending" : "ascending")}:");
+    Console.WriteLine($"Sorted {(descending ? "descending" : "ascending")}:");
 
-	foreach (Product product in products)
-	{
-		Console.WriteLine(product);
-	}
+    foreach (Product product in products)
+    {
+        Console.WriteLine(product);
+    }
 }
 
 class Product
 {
-	public string Name { get;}
-	public float Price { get;}
+    public string Name { get;}
+    public float Price { get;}
 
-	public override string ToString()
-	{
-		return "Name: " + Name + ", Price: " + Price;
-	}
+    public override string ToString()
+    {
+        return "Name: " + Name + ", Price: " + Price;
+    }
 
-	public Product(string name, float price)
-	{
-		Name = name;
-		Price = price;
-	}
+    public Product(string name, float price)
+    {
+        Name = name;
+        Price = price;
+    }
 }
 
