@@ -20,17 +20,19 @@ List<Customer> customers = new List<Customer>()
 
 string? name;
 
-do
+while (true)
 {
-	Console.Write("Enter name: ");
-	name = Console.ReadLine();
-} while (name == null);
+    Console.Write("Enter name: ");
+    name = Console.ReadLine();
+    if (name != null)
+        break;
+}
 
 var selected = from customer in customers where customer.Name == name select customer;
 
 foreach (Customer customer in selected)
 {
-	Console.WriteLine(customer);
+    Console.WriteLine(customer);
 }
 
 var number = selected.Where(customer => customer.Age >= 18).Count();
@@ -39,19 +41,19 @@ Console.WriteLine("Amount of customers older than 18: " + number);
 
 class Customer
 {
-	public string Name { get;}
-	public int Age { get;}
-	public string Address { get;}
+    public string Name { get;}
+    public int Age { get;}
+    public string Address { get;}
 
-	public override string ToString()
-	{
-		return "Name: " + Name + ", Age: " + Age + ", Address: " + Address;
-	}
+    public override string ToString()
+    {
+        return "Name: " + Name + ", Age: " + Age + ", Address: " + Address;
+    }
 
-	public Customer(string name, int age, string address)
-	{
-		Name = name;
-		Age = age;
-		Address = address;
-	}
+    public Customer(string name, int age, string address)
+    {
+        Name = name;
+        Age = age;
+        Address = address;
+    }
 }
