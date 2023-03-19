@@ -18,14 +18,14 @@ int maximum;
 
 while (true)
 {
-    Console.Write($"Enter minimum age: ");
+    Console.Write("Enter minimum age: ");
     if (int.TryParse(Console.ReadLine(), out minimum) || minimum >= 0 || minimum <= 130)
         break;
 }
 
 while (true)
 {
-    Console.Write($"Enter maximum age: ");
+    Console.Write("Enter maximum age: ");
     if (int.TryParse(Console.ReadLine(), out maximum) || maximum >= minimum || maximum <= 130)
         break;
 }

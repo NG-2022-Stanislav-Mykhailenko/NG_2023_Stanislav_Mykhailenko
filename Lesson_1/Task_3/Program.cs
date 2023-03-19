@@ -23,7 +23,7 @@ for (int i = 0; i < 10; i++)
 
 while (true)
 {
-    Console.Write($"Enter number to duplicate: ");
+    Console.Write("Enter number to duplicate: ");
     if (int.TryParse(Console.ReadLine(), out duplicate))
         break;
 }
