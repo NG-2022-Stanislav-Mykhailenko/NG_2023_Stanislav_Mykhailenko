@@ -11,7 +11,7 @@ Checked means the task is Done.
 ### Lesson 1
 
 - [x] Task 2
-- [ ] Task 3
+- [x] Task 3
 - [x] Task 4
 
 ### Lesson 2
