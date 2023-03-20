@@ -20,14 +20,17 @@ List<Customer> customers = new List<Customer>()
     new Customer("Alex", 77, "Street 10")
 };
 
-string? name;
+string name;
 
 while (true)
 {
     Console.Write("Enter name: ");
-    name = Console.ReadLine();
-    if (name != null)
+    string? input = Console.ReadLine();
+    if (!string.IsNullOrEmpty(input))
+    {
+        name = input;
         break;
+    }
 }
 
 var selected = from customer in customers where customer.Name == name select customer;

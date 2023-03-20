@@ -10,16 +10,20 @@ List<Product> products = new List<Product>();
 
 for (int i = 0; i < 10; i++)
 {
-    string? name;
+    string name;
     float price;
 
     while (true)
     {
         Console.Write($"Enter product {i + 1} name: ");
-        name = Console.ReadLine();
-        if (name != null)
+        string? input = Console.ReadLine();
+        if (!string.IsNullOrEmpty(input))
+        {
+            name = input;
             break;
+        }
     }
+
 
     while (true)
     {
