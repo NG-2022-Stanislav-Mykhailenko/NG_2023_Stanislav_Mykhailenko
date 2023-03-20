@@ -36,5 +36,5 @@ var selected = from person in people where person.Age >= minimum && person.Age <
 
 foreach (Person person in selected)
 {
-    Console.WriteLine(person);
+    Console.WriteLine($"Name: {person.Name}, Age: {person.Age}");
 }

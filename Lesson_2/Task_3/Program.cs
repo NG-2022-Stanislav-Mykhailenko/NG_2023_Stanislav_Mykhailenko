@@ -37,7 +37,7 @@ var selected = from customer in customers where customer.Name == name select cus
 
 foreach (Customer customer in selected)
 {
-    Console.WriteLine(customer);
+    Console.WriteLine($"Name: {customer.Name}, Age: {customer.Age}, Address: {customer.Address}");
 }
 
 var number = selected.Where(customer => customer.Age >= 18).Count();

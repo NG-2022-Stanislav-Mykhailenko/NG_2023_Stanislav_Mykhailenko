@@ -34,6 +34,12 @@ while (true)
     }
 }
 
-var selected = owners.FirstOrDefault(owner => cars.Any(car => car.Number == number && car.OwnerId == owner.Id));
-
-Console.WriteLine(selected);
+try
+{
+    var selected = owners.First(owner => cars.Any(car => car.Number == number && car.OwnerId == owner.Id));
+    Console.WriteLine($"Name: {selected.Name}, Address: {selected.Address}");
+}
+catch (InvalidOperationException)
+{
+    Console.WriteLine("Not found.");
+}

@@ -45,6 +45,6 @@ for (int i = 0; i < 2; i++)
 
     foreach (Product product in products)
     {
-        Console.WriteLine(product);
+        Console.WriteLine($"Name: {product.Name}, Price: {product.Price}");
     }
 }
