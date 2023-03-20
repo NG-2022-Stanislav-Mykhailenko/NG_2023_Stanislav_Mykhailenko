@@ -4,6 +4,8 @@
 * License: Unlicense
 */
 
+using PersonClass;
+
 List<Person> people = new List<Person>()
 {
     new Person("Tom",18),
@@ -35,21 +37,4 @@ var selected = from person in people where person.Age >= minimum && person.Age <
 foreach (Person person in selected)
 {
     Console.WriteLine(person);
-}
-
-class Person
-{
-    public string Name { get;}
-    public int Age { get;}
-
-    public override string ToString()
-    {
-        return "Name: " + Name + ", Age: " + Age;
-    }
-
-    public Person(string name, int age)
-    {
-        Name = name;
-        Age = age;
-    }
 }

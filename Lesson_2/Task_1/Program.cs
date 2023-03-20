@@ -4,6 +4,8 @@
 * License: Unlicense
 */
 
+using ProductClass;
+
 List<Product> products = new List<Product>();
 
 for (int i = 0; i < 10; i++)
@@ -42,21 +44,3 @@ for (int i = 0; i < 2; i++)
         Console.WriteLine(product);
     }
 }
-
-class Product
-{
-    public string Name { get;}
-    public float Price { get;}
-
-    public override string ToString()
-    {
-        return "Name: " + Name + ", Price: " + Price;
-    }
-
-    public Product(string name, float price)
-    {
-        Name = name;
-        Price = price;
-    }
-}
-

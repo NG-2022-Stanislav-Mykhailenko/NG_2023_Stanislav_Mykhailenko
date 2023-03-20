@@ -4,6 +4,9 @@
 * License: Unlicense
 */
 
+using CarClass;
+using OwnerClass;
+
 List<Owner> owners = new List<Owner>()
 {
     new Owner(1, "Tom", "Street 1"),
@@ -31,34 +34,3 @@ while (true)
 var selected = owners.FirstOrDefault(owner => cars.Any(car => car.Number == number && car.OwnerId == owner.Id));
 
 Console.WriteLine(selected);
-
-class Owner
-{
-    public int Id { get;}
-    public string Name { get;}
-    public string Address { get;}
-
-    public override string ToString()
-    {
-        return "Name: " + Name + ", Address: " + Address;
-    }
-
-    public Owner(int id, string name, string address)
-    {
-        Id = id;
-        Name = name;
-        Address = address;
-    }
-}
-
-class Car
-{
-    public string Number { get;}
-    public int OwnerId { get;}
-
-    public Car(string number, int ownerId)
-    {
-        Number = number;
-        OwnerId = ownerId;
-    }
-}

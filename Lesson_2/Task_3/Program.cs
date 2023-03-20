@@ -4,6 +4,8 @@
 * License: Unlicense
 */
 
+using CustomerClass;
+
 List<Customer> customers = new List<Customer>()
 {
     new Customer("Tom", 14, "Street 1"),
@@ -38,22 +40,3 @@ foreach (Customer customer in selected)
 var number = selected.Where(customer => customer.Age >= 18).Count();
 
 Console.WriteLine("Amount of customers older than 18: " + number);
-
-class Customer
-{
-    public string Name { get;}
-    public int Age { get;}
-    public string Address { get;}
-
-    public override string ToString()
-    {
-        return "Name: " + Name + ", Age: " + Age + ", Address: " + Address;
-    }
-
-    public Customer(string name, int age, string address)
-    {
-        Name = name;
-        Age = age;
-        Address = address;
-    }
-}
