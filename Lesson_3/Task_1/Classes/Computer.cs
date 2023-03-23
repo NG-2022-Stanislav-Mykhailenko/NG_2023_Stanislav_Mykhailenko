@@ -65,6 +65,39 @@ class Computer
         Price = motherboard.Price;
     }
 
+    public void HardwareSelection(int money)
+    {
+        while (true)
+        {
+            int choice;
+            Console.WriteLine("RAMs [1]\nCPUs [2]\nGPUs [3]\nDrives [4]\nCheckout [5]\nQuit [6]");
+            Console.Write("Enter a number: ");
+            if (int.TryParse(Console.ReadLine(), out choice))
+            {
+                switch (choice)
+                {
+                    case 1:
+                        (new RamMethods()).DisplayRamList(this, (new RamsForSale()).Hardware);
+                        break;
+                    case 2:
+                        (new CpuMethods()).DisplayCpuList(this, (new CpusForSale()).Hardware);
+                        break;
+                    case 3:
+                        (new GpuMethods()).DisplayGpuList(this, (new GpusForSale()).Hardware);
+                        break;
+                    case 4:
+                        (new DriveMethods()).DisplayDriveList(this, (new DrivesForSale()).Hardware);
+                        break;
+                    case 5:
+                        Checkout(money);
+                        break;
+                    case 6:
+                        return;
+                }
+            }
+        }
+    }
+
     public void Checkout(int money)
     {
         while (true)
@@ -80,6 +113,7 @@ class Computer
                 Console.WriteLine("You cannot afford this computer.");
 
             Console.WriteLine("Remove RAMs [1]\nRemove CPUs [2]\nRemove GPUs [3]\nRemove Drives [4]\nReplace motherboard (removes everything else) [5]\nGo back [6]");
+            Console.Write("Enter a number: ");
             if (int.TryParse(Console.ReadLine(), out choice))
             {
                 switch (choice)
@@ -101,12 +135,10 @@ class Computer
                         this.Replace(motherboard);
                         break;
                     case 6:
-                        goto Back;
+                        return;
                 }
             }
         }
-        Back:
-            Console.WriteLine("Going back…");
     }
 
     public Computer(Motherboard motherboard)
