@@ -2,6 +2,6 @@ namespace Classes;
 
 class Gpu : Detail
 {
-    public int Memory { get; set; }
-    public int Speed { get; set; }
+    public required int Memory { get; set; }
+    public required int Speed { get; set; }
 }
