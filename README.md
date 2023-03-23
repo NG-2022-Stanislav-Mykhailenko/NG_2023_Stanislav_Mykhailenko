@@ -23,4 +23,4 @@ Checked means the task is Done.
 
 ### Lesson 3
 
-- [ ] Task 1
+- [x] Task 1
