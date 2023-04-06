@@ -29,3 +29,7 @@ Checked means the task is Done.
 
 - [ ] Task 1
 - [ ] Task 2
+
+### Lesson 5
+
+- [ ] Task 1
