@@ -4,10 +4,8 @@
 * License: Unlicense
 */
 
-
-﻿using Lesson5_WorkWithFiles.FileSystem;
-using Lesson5_WorkWithFiles.WorkWithFiles;
-using Lesson5_WorkWithFiles.CopyDirectory;
+﻿using Lesson5.Classes;
+using Lesson5.Interfaces;
 
 var dir = Directory.GetCurrentDirectory();
 string? command;
@@ -30,17 +28,17 @@ info - get data info
     switch (command)
     {
         case "cd":
-            dir = WorkWithFileSystem.Cd(WorkWithFileSystem.AskStringInput("Enter the directory name: "), dir);
+            dir = WorkWithFileSystem.Cd(UserInput.AskStringInput("Enter the directory name: "), dir);
             break;
         case "dir":
             WorkWithFileSystem.GetDirectoryFiles(dir);
             break;
         case "open":
-            ReadWrite.ReadByPath(WorkWithFileSystem.AskStringInput("Enter the file name: "));
+            ReadFile.ReadByPath(UserInput.AskStringInput("Enter the file name: "));
             break;
         case "mv":
-            string moveSource = Path.Combine(dir, WorkWithFileSystem.AskStringInput("Enter the source: "));
-            string moveDestination = Path.Combine(dir, WorkWithFileSystem.AskStringInput("Enter the destination: "));
+            string moveSource = Path.Combine(dir, UserInput.AskStringInput("Enter the source: "));
+            string moveDestination = Path.Combine(dir, UserInput.AskStringInput("Enter the destination: "));
 
             if (Directory.Exists(moveSource) || File.Exists(moveSource))
                 Directory.Move(moveSource, moveDestination);
@@ -48,7 +46,7 @@ info - get data info
                 Console.WriteLine("Not found.");
             break;
         case "rm":
-            string path = Path.Combine(dir, WorkWithFileSystem.AskStringInput("Enter the file or directory to delete: "));
+            string path = Path.Combine(dir, UserInput.AskStringInput("Enter the file or directory to delete: "));
 
             if (Directory.Exists(path))
                 Directory.Delete(path, true);
@@ -58,8 +56,8 @@ info - get data info
                 Console.WriteLine("Not found.");
             break;
         case "cp":
-            string copySource = Path.Combine(dir, WorkWithFileSystem.AskStringInput("Enter the source: "));
-            string copyDestination = Path.Combine(dir, WorkWithFileSystem.AskStringInput("Enter the destination: "));
+            string copySource = Path.Combine(dir, UserInput.AskStringInput("Enter the source: "));
+            string copyDestination = Path.Combine(dir, UserInput.AskStringInput("Enter the destination: "));
 
             if (Directory.Exists(copySource))
                 CopyDirectory.Copy(copySource, copyDestination, true);
@@ -69,7 +67,7 @@ info - get data info
                 Console.WriteLine("Not found.");
             break;
         case "info":
-            FileInfoOperation.GetFileInfo(WorkWithFileSystem.AskStringInput("Enter the file name: "));
+            FileInfoOperation.GetFileInfo(UserInput.AskStringInput("Enter the file name: "));
             break;
         default:
             Console.WriteLine("Unknown command");

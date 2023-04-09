@@ -1,6 +1,8 @@
-namespace Lesson5_WorkWithFiles.CopyDirectory;
+namespace Lesson5.Classes;
 
-public class CopyDirectory
+using Lesson5.Interfaces;
+
+public class CopyDirectory : ICopyDirectory
 {
     public static void Copy(string sourceDir, string destinationDir, bool recursive)
     {

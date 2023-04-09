@@ -1,6 +1,8 @@
-﻿namespace Lesson5_WorkWithFiles.WorkWithFiles;
+﻿namespace Lesson5.Classes;
 
-public static class ReadWrite
+using Lesson5.Interfaces;
+
+public class ReadFile : IReadFile
 {
     public static void ReadByPath(string path)
     {
@@ -10,10 +12,5 @@ public static class ReadWrite
         {
             Console.WriteLine(str);   
         }
-    }
-
-    public static void WriteToFile(string text, string path)
-    {
-        File.WriteAllText(text, path);
     }
 }
