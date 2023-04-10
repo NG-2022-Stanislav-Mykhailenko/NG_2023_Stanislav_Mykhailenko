@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Open_Closed
+using Open_Closed.Interfaces;
+
+namespace Open_Closed.Classes
 {
-    public class FireMagic : Magic
+    public class FireMagic : IMagic
     {
-        public override void CountYourMagic() 
+        public void CountYourMagic() 
         {
             Console.WriteLine("Wow, your magic is fire magic!");
         }
