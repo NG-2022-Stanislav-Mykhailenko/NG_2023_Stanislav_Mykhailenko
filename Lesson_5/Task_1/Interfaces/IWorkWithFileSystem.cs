@@ -2,6 +2,6 @@ namespace Lesson5.Interfaces;
 
 public interface IWorkWithFileSystem
 {
-    public static abstract void GetDirectoryFiles(string path);
-    public static abstract string Cd(string name, string current);
+    static void GetDirectoryFiles(string path) => throw new NotImplementedException();
+    static string Cd(string name, string current) => throw new NotImplementedException();
 }

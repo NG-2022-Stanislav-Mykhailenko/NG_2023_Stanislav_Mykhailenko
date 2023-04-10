@@ -2,5 +2,5 @@ namespace Lesson5.Interfaces;
 
 public interface IFileInfoOperation
 {
-    public static abstract void GetFileInfo(string path);
+    static void GetFileInfo(string path) => throw new NotImplementedException();
 }

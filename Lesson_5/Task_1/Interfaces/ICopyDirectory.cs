@@ -2,5 +2,5 @@ namespace Lesson5.Interfaces;
 
 public interface ICopyDirectory
 {
-    public static abstract void Copy(string sourceDir, string destinationDir, bool recursive);
+    static void Copy(string sourceDir, string destinationDir, bool recursive) => throw new NotImplementedException();
 }
