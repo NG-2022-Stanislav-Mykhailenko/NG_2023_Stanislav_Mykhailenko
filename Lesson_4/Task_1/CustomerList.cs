@@ -31,10 +31,7 @@
         {
             var customer = GetById(id);
             if (customer != null)
-            {
                 customer.Balance = newBalance;
-                (new Database()).SaveToDatabase();
-            }
         }
     }
 }
