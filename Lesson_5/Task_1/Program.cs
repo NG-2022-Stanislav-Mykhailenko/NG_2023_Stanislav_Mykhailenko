@@ -40,6 +40,16 @@ info - get data info
             string moveSource = Path.Combine(dir, UserInput.AskStringInput("Enter the source: "));
             string moveDestination = Path.Combine(dir, UserInput.AskStringInput("Enter the destination: "));
 
+            try
+            {
+                moveDestination = Validation.Check(moveSource, moveDestination);
+            }
+            catch (PathConflictException)
+            {
+                Console.WriteLine("Conflict.");
+                break;
+            }
+
             if (Directory.Exists(moveSource) || File.Exists(moveSource))
                 Directory.Move(moveSource, moveDestination);
             else
@@ -58,6 +68,16 @@ info - get data info
         case "cp":
             string copySource = Path.Combine(dir, UserInput.AskStringInput("Enter the source: "));
             string copyDestination = Path.Combine(dir, UserInput.AskStringInput("Enter the destination: "));
+
+            try
+            {
+                copyDestination = Validation.Check(copySource, copyDestination);
+            }
+            catch (PathConflictException)
+            {
+                Console.WriteLine("Conflict.");
+                break;
+            }
 
             if (Directory.Exists(copySource))
                 CopyDirectory.Copy(copySource, copyDestination, true);
