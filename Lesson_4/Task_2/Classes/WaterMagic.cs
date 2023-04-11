@@ -10,9 +10,7 @@ namespace Open_Closed.Classes
 {
     public class WaterMagic : IMagic
     {
-        public void CountYourMagic() 
-        {
-            Console.WriteLine("Incredible! You have 50 millions of power! It's water magic!");
-        }
+        public int MagicValue { get { return 50000000; } }
+        public string MagicType { get { return "water"; } }
     }
 }

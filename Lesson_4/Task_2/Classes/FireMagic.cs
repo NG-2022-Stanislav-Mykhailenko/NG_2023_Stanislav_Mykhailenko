@@ -10,9 +10,7 @@ namespace Open_Closed.Classes
 {
     public class FireMagic : IMagic
     {
-        public void CountYourMagic() 
-        {
-            Console.WriteLine("Wow, your magic is fire magic!");
-        }
+        public int MagicValue { get { return 150; } }
+        public string MagicType { get { return "fire"; } }
     }
 }
