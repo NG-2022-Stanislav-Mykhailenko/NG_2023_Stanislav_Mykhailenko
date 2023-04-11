@@ -1,5 +1,6 @@
-using LiskovSubstitution;
+using LiskovSubstitution.Classes;
 
-(new User()).SaveToFile("test");
+// CS1061
+// (new User()).SaveToFile("test");
 
 (new Administrator()).SaveToFile("test");
