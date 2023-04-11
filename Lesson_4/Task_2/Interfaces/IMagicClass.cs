@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Open_Closed.Interfaces
 {
-    public interface IMagic
+    public interface IMagicClass
     {
-        void CountYourMagic(IMagicClass MagicClass);
+        int MagicValue { get; }
+        string MagicType { get; }
     }
 }
