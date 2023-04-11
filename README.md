@@ -29,6 +29,8 @@ Checked means the task is Done.
 
 - [ ] Task 1
 - [ ] Task 2
+- [ ] Task 3
+- [x] Task 4
 
 ### Lesson 5
 
