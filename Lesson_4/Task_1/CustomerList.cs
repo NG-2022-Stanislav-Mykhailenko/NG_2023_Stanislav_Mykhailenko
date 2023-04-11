@@ -8,6 +8,11 @@
             new Customer(2, "VHarbar", 100000)
         };
 
+        public void GetBalance(int id)
+        {
+            Console.WriteLine($"Your balance is: {GetBalanceById(id)}");
+        }
+
         public decimal? GetBalanceById(int id)
         {
             var customer = Customers.FirstOrDefault(x => x.Id == id);

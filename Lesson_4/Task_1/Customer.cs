@@ -12,10 +12,5 @@
             Name = name; 
             Balance = balance;
         }
-
-        public void GetBalance()
-        {
-            Console.WriteLine($"Your balance is: {Balance}");
-        }
     }
 }
