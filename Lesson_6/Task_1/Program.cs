@@ -1,3 +1,9 @@
+/*
+* Lesson 6 Task 1: calculator using delegates, events and lambdas
+* Author: Stanislav Mykhailenko
+* License: Unlicense
+*/
+
 using Lesson6.Classes;
 
 namespace Lesson6

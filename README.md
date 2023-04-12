@@ -35,3 +35,7 @@ Checked means the task is Done.
 ### Lesson 5
 
 - [ ] Task 1
+
+### Lesson 6 
+
+- [ ] Task 1
