@@ -10,9 +10,25 @@ namespace Open_Closed.Classes
 {
     public class Magic : IMagic
     {
-        public void CountYourMagic(IMagicClass MagicClass)
+        private List<MagicType> MagicTypes;
+
+        public Magic(List<MagicType> magicTypes)
         {
-            Console.WriteLine($"Your magic is {MagicClass.MagicType}.");
+            MagicTypes = magicTypes;
+        }
+
+        public void CountYourMagic(int magic) 
+        {
+            foreach(var magicType in MagicTypes)
+            {
+                if(magic == magicType.Value)
+                {
+                    Console.WriteLine($"Wow, your magic is {magicType.Name}!");
+                    return;
+                }
+            }
+
+            Console.WriteLine("I understand you...");
         }
     }
 }

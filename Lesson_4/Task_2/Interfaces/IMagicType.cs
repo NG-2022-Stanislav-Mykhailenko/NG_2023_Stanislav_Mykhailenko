@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Open_Closed.Interfaces
 {
-    public interface IMagicClass
+    public interface IMagicType
     {
-        int MagicValue { get; }
-        string MagicType { get; }
+        string Name { get; }
+        int Value { get; }
     }
 }
