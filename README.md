@@ -27,15 +27,15 @@ Checked means the task is Done.
 
 ### Lesson 4
 
-- [ ] Task 1
+- [x] Task 1
 - [ ] Task 2
 - [x] Task 3
 - [x] Task 4
 
 ### Lesson 5
 
-- [ ] Task 1
+- [x] Task 1
 
 ### Lesson 6 
 
-- [ ] Task 1
+- [x] Task 1
