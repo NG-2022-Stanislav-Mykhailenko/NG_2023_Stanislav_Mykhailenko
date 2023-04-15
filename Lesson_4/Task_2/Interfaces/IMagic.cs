@@ -8,6 +8,9 @@ namespace Open_Closed.Interfaces
 {
     public interface IMagic
     {
-        void CountYourMagic(string MagicType);
+        abstract int MagicValue { get; }
+        abstract string MagicType { get; }
+
+        void CountYourMagic();
     }
 }
