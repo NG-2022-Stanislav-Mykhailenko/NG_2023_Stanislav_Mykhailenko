@@ -8,11 +8,9 @@ using Open_Closed.Interfaces;
 
 namespace Open_Closed.Classes
 {
-    public class Magic : IMagic
+    public class FireMagic : IMagicClass
     {
-        public void CountYourMagic(IMagicClass MagicClass)
-        {
-            Console.WriteLine($"Your magic is {MagicClass.MagicType}.");
-        }
+        public int MagicValue { get { return 150; } }
+        public string MagicType { get { return "fire"; } }
     }
 }

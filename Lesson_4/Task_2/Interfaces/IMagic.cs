@@ -8,6 +8,6 @@ namespace Open_Closed.Interfaces
 {
     public interface IMagic
     {
-        void CountYourMagic(int magic);
+        void CountYourMagic(IMagicClass MagicClass);
     }
 }
