@@ -10,9 +10,9 @@ namespace Open_Closed.Classes
 {
     public class Magic : IMagic
     {
-        public void CountYourMagic(IMagicClass MagicClass)
+        public void CountYourMagic(string MagicType)
         {
-            Console.WriteLine($"Your magic is {MagicClass.MagicType}.");
+            Console.WriteLine($"Your magic is {MagicType}.");
         }
     }
 }
