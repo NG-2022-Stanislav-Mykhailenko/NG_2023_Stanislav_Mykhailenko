@@ -8,10 +8,10 @@ using Open_Closed.Interfaces;
 
 namespace Open_Closed.Classes
 {
-    abstract public class Magic : IMagic
+    public abstract class Magic : IMagic
     {
-        abstract public int MagicValue { get; }
-        abstract public string MagicType { get; }
+        public abstract int MagicValue { get; }
+        public abstract string MagicType { get; }
 
         public void CountYourMagic()
         {
