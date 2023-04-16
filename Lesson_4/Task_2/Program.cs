@@ -1,4 +1,5 @@
 using Open_Closed.Classes;
+using Open_Closed.Interfaces;
 
-(new FireMagic()).CountYourMagic();
-(new WaterMagic()).CountYourMagic();
+((IMagic) new FireMagic()).CountYourMagic();
+((IMagic) new WaterMagic()).CountYourMagic();

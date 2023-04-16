@@ -8,9 +8,8 @@ using Open_Closed.Interfaces;
 
 namespace Open_Closed.Classes
 {
-    public class WaterMagic : Magic, IMagic
+    public class WaterMagic : IMagic
     {
-        public override int MagicValue { get { return 50000000; } }
-        public override string MagicType { get { return "water"; } }
+        public string MagicType { get { return "water"; } }
     }
 }

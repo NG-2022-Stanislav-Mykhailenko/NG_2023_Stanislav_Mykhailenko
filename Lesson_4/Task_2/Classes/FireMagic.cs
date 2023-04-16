@@ -8,9 +8,8 @@ using Open_Closed.Interfaces;
 
 namespace Open_Closed.Classes
 {
-    public class FireMagic : Magic, IMagic
+    public class FireMagic : IMagic
     {
-        public override int MagicValue { get { return 150; } }
-        public override string MagicType { get { return "fire"; } }
+        public string MagicType { get { return "fire"; } }
     }
 }
