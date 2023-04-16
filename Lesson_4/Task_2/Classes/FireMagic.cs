@@ -4,6 +4,6 @@ namespace Open_Closed.Classes
 {
     public class FireMagic : IMagic
     {
-        public string MagicType { get { return "fire"; } }
+        public string MagicType { get; } = "fire";
     }
 }

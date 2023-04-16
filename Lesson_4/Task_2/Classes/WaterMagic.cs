@@ -4,6 +4,6 @@ namespace Open_Closed.Classes
 {
     public class WaterMagic : IMagic
     {
-        public string MagicType { get { return "water"; } }
+        public string MagicType { get; } = "water";
     }
 }
