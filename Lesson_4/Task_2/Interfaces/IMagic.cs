@@ -10,9 +10,6 @@ namespace Open_Closed.Interfaces
     {
         string MagicType { get; }
 
-        public void CountYourMagic()
-        {
-            Console.WriteLine($"Your magic is {MagicType}.");
-        }
+        void CountYourMagic() => Console.WriteLine($"Your magic is {MagicType}.");
     }
 }
