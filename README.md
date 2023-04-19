@@ -39,3 +39,7 @@ Checked means the task is Done.
 ### Lesson 6 
 
 - [x] Task 1
+
+### Lesson 7
+
+- [x] Task 1
